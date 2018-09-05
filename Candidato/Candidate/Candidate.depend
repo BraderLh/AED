@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1535955587 source:e:\unsa cs\segundo semestre - 2018\aed\tarea\candidato\candidate\main.cpp
+	<iostream>
+	<string>
+	"candidateType.h"
+	<vector>
+
+1535955694 e:\unsa cs\segundo semestre - 2018\aed\tarea\candidato\candidate\candidatetype.h
+	<string>
+	<stdio.h>
+	<iomanip>
+
