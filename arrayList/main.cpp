@@ -8,25 +8,37 @@ using namespace std;
 
 int main()
 {
+    //template<typename T>
     arrayListType<int> intList(100);
     arrayListType<string> stringList;
-    int number;
+    double num;
 
-    polynomialType p(8);
+    polynomialType p(3);
     polynomialType q(4);
     polynomialType t;
     polynomialType r;
 
-    cin >> p; //Line 9
-    cout << endl << "Line 10: p(x): " << p << endl; //Line 10
-    cout << "Line 11: p(5): " << p(5) << endl << endl; //Line 11
-    cin >> q; //Line 12
-    cout << endl << "Line 13: q(x): " << q << endl<< endl; //Line 13
+    cin >> p;
+    cout << endl << "Polinomio -> p(x): " << p << endl;
+    cout<<"Numero a evaluar en p(x): ";cin>>num;
+    cout << "p("<<num<<"): "<< p(num)<<endl << endl;
+
+    p.derivar();
+    cout<<"p'(x): "<<p<<endl;
+
+    /*cin >> q; //Line 12
+    cout << endl << "Line 13: q(x): " << q << endl<< endl;
     t = p + q; //Line 14
-    cout << "Line 15: p(x) + q(x): " << t << endl; //Line 15
-    cout << "Line 16: p(x) - q(x): " << p - q << endl; //Line 16
+    cout << "Line 15: p(x) + q(x): " << t << endl;
+    cout << "Line 16: p(x) - q(x): " << p - q << endl;
     r=p*q;
     cout<<" p(x) * q(x): "<<p*q<<endl;
+
+
+
+
+
+
     /*
     arrayListType<int> intList(100); //Line 7
     arrayListType<string> stringList; //Line 8

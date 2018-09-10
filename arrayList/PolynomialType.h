@@ -20,6 +20,8 @@ public:
 
     int min(int x,int y) const;
     int max(int x,int y) const;
+
+    void derivar();
 };
 
 polynomialType::polynomialType(int size) : arrayListType<double> (size)
@@ -38,6 +40,17 @@ double polynomialType::operator() (double x)
         value = value + list[i] * pow(x,i);
     }
     return value;
+}
+
+void polynomialType::derivar()
+{
+    int indice=0;
+    for(int i=indice;i<length;i++)
+    {
+        list[i] = list[i] * i;
+        indice=indice-1;
+    }
+
 }
 
 polynomialType polynomialType::operator+ (const polynomialType& right)
@@ -109,6 +122,8 @@ int polynomialType::max(int x, int y) const
     else
         return y;
 }
+
+
 ostream& operator<<(ostream& os, const polynomialType& p)
 {
     int indexFirstNonzeroCoeff = 0;
@@ -133,16 +148,19 @@ ostream& operator<<(ostream& os, const polynomialType& p)
         for (int i = indexFirstNonzeroCoeff + 1; i < p.length; i++)
         {
             if (p.list[i] != 0.0)
+            {
                 if (p.list[i] >= 0.0)
                     os << "+ " << p.list[i] << "x^" << i << " ";
                 else
                     os << "- " << -p.list[i] << "x^" << i << " ";
+            }
         }
     }
     else
         os << "0";
     return os;
 }
+
 
 istream& operator>>(istream& is, polynomialType& p)
 {
@@ -154,5 +172,6 @@ istream& operator>>(istream& is, polynomialType& p)
     }
     return is;
 }
+
 
 #endif // POLYNOMIALTYPE_H_INCLUDED
