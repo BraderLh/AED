@@ -5,6 +5,7 @@
 using std::string;
 #include <stdio.h>
 #include <iomanip>
+#include <vector>
 using namespace std;
 
 class candidateType
@@ -13,7 +14,7 @@ public:
     void setCandidateInfo(string ctName, int ctVotes, float ctPVotes);
     void print(ostream& outp);
     int getVotes();
-    void getCandidateName(string& ctName);
+    string getCandidateName();
     float getPercent();
 
     bool operator== (const candidateType&) const;
@@ -51,14 +52,16 @@ int candidateType::getVotes()
 {
     return canVotes;
 }
-void candidateType::getCandidateName(string& ctName)
+string candidateType::getCandidateName()
 {
-    canName=ctName;
-    cout<<ctName<<endl;
+    //canName=ctName;
+    //cout<<ctName<<endl;
+    return canName;
 }
 float candidateType::getPercent()
 {
     return canPVotes;
 }
+
 
 #endif // CANDIDATETYPE_H_INCLUDED
