@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1537340836 source:e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\listtype.cpp
+	"listType.h"
+	<iostream>
+	<assert.h>
+
+1537340887 e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\listtype.h
+	"orderedLinkedList.h"
+	"listType.cpp"
+
+1537385122 e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\listiterator.h
+	"linkedList.h"
+	<iostream>
+
+1537333962 e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\nodotype.h
+	"listType.h"
+
+1537386466 source:e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\main.cpp
+	<iostream>
+	"linkedList.h"
+
+1537386626 e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\orderedlinkedlist.h
+	"linkedList.h"
+
+1537252006 source:e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\orderedlinkedlist.cpp
+
+1537335443 e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\orderedlinkedlist.cpp
+
+1537340836 e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\listtype.cpp
+	"listType.h"
+	<iostream>
+	<assert.h>
+
+1537386526 e:\unsa cs\segundo semestre - 2018\aed\tarea\linked list iterator\iteradorlistaenlazada\linkedlist.h
+	"orderedLinkedList.h"
+	"listIterator.h"
+	<assert.h>
+
