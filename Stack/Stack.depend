@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1538542888 source:e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\main.cpp
+	<iostream>
+	<fstream>
+	"Pila.h"
+	"StackType.h"
+	"CalcuPosF.h"
+	"InPosFix.h"
+	<string>
+
+1537811780 e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\pila.h
+	"StackADT.h"
+	<iostream>
+	<cassert>
+
+1537809673 e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\stackadt.h
+
+1538381243 e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\stacktype.h
+	"StackADT.h"
+
+1538373054 e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\calcuposf.h
+	<iomanip>
+	<stdlib.h>
+	<iostream>
+
+1538547687 e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\inposfix.h
+	<iostream>
+	"StackType.h"
+	<string>
+	<stack>
+	<ctype.h>
+
