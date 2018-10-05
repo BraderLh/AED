@@ -16,7 +16,7 @@ int main()
 {
     string expresion;
     fixInPos infija;
-
+/*
     cout<<"Ingres una expresion infija: ";
     getline(cin,expresion);
     infija.setInfix(expresion);
@@ -27,14 +27,14 @@ int main()
     cout<<infija.showPosfix();
     //cout<<infija.precedence('+')<<endl;
 
-    /*
+*/
     bool expressionOk;
-    char ch;
+    string ch;
     stackType<double> stack(100);
     ifstream infile;
     ofstream outfile;
 
-    infile.open("RpnData.txt");
+    infile.open("RpnDataInfix.txt");
 
     if (!infile)
     {
@@ -43,25 +43,50 @@ int main()
         return 1;
     }
 
-    outfile.open("RpnOutput.txt");
+    outfile.open("RpnPostFix.txt");
 
     outfile << fixed << showpoint;
     outfile << setprecision(2);
-
-    infile >> ch;
-    while (infile)
+    string post;
+    //infile >> cha;
+    while (!infile.eof())
     {
+        //evaluateExpression(infile, outfile, stack, cha,expressionOk);
+        infile >> ch; //begin processing the next expression
+
+        infija.setInfix(ch);
+        infija.convertToPosfix();
+        //cout<<ch<<endl;
+        post = infija.showPosfix();
+        //cout<<post<<"="<<endl;
+
+        outfile << infija.showPosfix()<<"="<<endl;
+        //printResult(outfile, stack, expressionOk);
+
+    } //end while
+    outfile.close();
+
+    ifstream enPost;
+    enPost.open("RpnPostFix.txt");
+
+    ofstream salida;
+    salida.open("SuperSalida.txt");
+    char cha;
+
+
+    enPost>>cha;
+    while(enPost){
         stack.initializeStack();
         expressionOk = true;
-        outfile << ch;
+        outfile<< cha;
+        evaluateExpression(enPost,salida,stack,cha,expressionOk);
+        printResult(salida,stack,expressionOk);
+        enPost>>cha;
+    }
 
-        evaluateExpression(infile, outfile, stack, ch,expressionOk);
-        printResult(outfile, stack, expressionOk);
-        infile >> ch; //begin processing the next expression
-    } //end while
+
 
     infile.close();
-    outfile.close();
 
     return 0;
 

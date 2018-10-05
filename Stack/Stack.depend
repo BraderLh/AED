@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1538542888 source:e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\main.cpp
+1538696755 source:e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\main.cpp
 	<iostream>
 	<fstream>
 	"Pila.h"
@@ -23,7 +23,7 @@
 	<stdlib.h>
 	<iostream>
 
-1538547687 e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\inposfix.h
+1538696011 e:\unsa cs\segundo semestre - 2018\aed\tarea\pila\stack\inposfix.h
 	<iostream>
 	"StackType.h"
 	<string>

@@ -23,6 +23,7 @@ public:
     void setInfix(string);
     string showInfix();
     string showPosfix();
+    //void showPosfix();
     void convertToPosfix();
     int precedence(char);
     bool comparePre(char,char);
@@ -55,9 +56,14 @@ void fixInPos::convertToPosfix()
         sym=infix[i];
 
         //SI ES UN LETRA DEL ALFABETO
-        if(isalpha(infix[i]))
+        if(isdigit(infix[i]) || infix[i] == '#')
         {
-            posfix.append(sym);
+            if(infix[i]=='#')
+                posfix.append("#");
+            else{
+                posfix.append(sym);
+            }
+
         }
         else if(infix[i] == '(' || infix[i] == ')')
         {
@@ -87,37 +93,52 @@ void fixInPos::convertToPosfix()
 
         else if(sym==";")
         {
-            while(!stack1.isEmptyStack())
-            {
-                sym=stack1.top();
-                posfix.append(sym);
-                stack1.pop();
-            }
+
         }
 
         //SI ES UN OPERADOR
         else if(!isalpha(infix[i]))
         {
+            posfix.append(" ");
+            //cout<<" ";
             while(!stack1.isEmptyStack())
             {
+                //posfix.append(" ");
                 if(comparePre(stack1.top()[0], sym[0]))
                 {
                     posfix.append(stack1.top());
                     stack1.pop();
+                    posfix.append(" ");
                 }
                 else
                 {
                     break;
                 }
             }
+
+            //posfix.append(" ");
             stack1.push(sym);
         }
+        /*while(!stack1.isEmptyStack())
+        {
+
+            posfix.append(sym);
+        }*/
+    }
+    while(!stack1.isEmptyStack())
+    {
+        sym=stack1.top();
+        posfix.append(" ");
+        posfix.append(sym);
+        stack1.pop();
     }
 }
 
+//string fixInPos::showPosfix()
 string fixInPos::showPosfix()
 {
     return this->posfix;
+    //cout<<posfix<<endl;
 }
 
 int fixInPos::precedence(char op)
